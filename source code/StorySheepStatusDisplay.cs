@@ -4,35 +4,35 @@ using Pixelplacement.TweenSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000161 RID: 353
+// Token: 0x02000162 RID: 354
 public class StorySheepStatusDisplay : MonoBehaviour
 {
-	// Token: 0x06000874 RID: 2164 RVA: 0x00007F4A File Offset: 0x0000614A
+	// Token: 0x0600087F RID: 2175 RVA: 0x00007F66 File Offset: 0x00006166
 	private void Awake()
 	{
 		this.rootRectTransform = base.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06000875 RID: 2165 RVA: 0x00007F58 File Offset: 0x00006158
+	// Token: 0x06000880 RID: 2176 RVA: 0x00007F74 File Offset: 0x00006174
 	private void OnEnable()
 	{
 		this.AnimateOnScreenComplete();
 	}
 
-	// Token: 0x06000876 RID: 2166 RVA: 0x00038454 File Offset: 0x00036654
+	// Token: 0x06000881 RID: 2177 RVA: 0x00038810 File Offset: 0x00036A10
 	private void AnimateOffScreen()
 	{
 		this.currentDisplayState = StorySheepStatusDisplay.DisplayState.AnimatingOut;
 		this.movementTween = Tween.AnchoredPosition(this.rootRectTransform, new Vector3(0f, 280f, 0f), 0.5f, 0f, Tween.EaseIn, Tween.LoopType.None, null, new Action(this.AnimateOffScreenComplete), true);
 	}
 
-	// Token: 0x06000877 RID: 2167 RVA: 0x00007F60 File Offset: 0x00006160
+	// Token: 0x06000882 RID: 2178 RVA: 0x00007F7C File Offset: 0x0000617C
 	private void AnimateOffScreenComplete()
 	{
 		this.currentDisplayState = StorySheepStatusDisplay.DisplayState.OffScreen;
 	}
 
-	// Token: 0x06000878 RID: 2168 RVA: 0x000384B0 File Offset: 0x000366B0
+	// Token: 0x06000883 RID: 2179 RVA: 0x0003886C File Offset: 0x00036A6C
 	private void AnimateOnScreen()
 	{
 		this.currentDisplayState = StorySheepStatusDisplay.DisplayState.AnimatingIn;
@@ -43,7 +43,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		this.movementTween = Tween.AnchoredPosition(this.rootRectTransform, new Vector3(0f, 0f, 0f), 0.5f, 0f, Tween.EaseOut, Tween.LoopType.None, null, new Action(this.AnimateOnScreenComplete), true);
 	}
 
-	// Token: 0x06000879 RID: 2169 RVA: 0x00007F69 File Offset: 0x00006169
+	// Token: 0x06000884 RID: 2180 RVA: 0x00007F85 File Offset: 0x00006185
 	private void AnimateOnScreenComplete()
 	{
 		this.currentDisplayState = StorySheepStatusDisplay.DisplayState.OnScreen;
@@ -51,7 +51,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		this.onScreenTimer = 2f;
 	}
 
-	// Token: 0x0600087A RID: 2170 RVA: 0x00038520 File Offset: 0x00036720
+	// Token: 0x06000885 RID: 2181 RVA: 0x000388DC File Offset: 0x00036ADC
 	private void Update()
 	{
 		if (this.state == 0 && this.onScreenTimer > 0f)
@@ -71,11 +71,11 @@ public class StorySheepStatusDisplay : MonoBehaviour
 				return;
 			}
 			this.state = 0;
-   			this.AnimateOffScreen();
+			this.AnimateOffScreen();
 		}
 	}
 
-	// Token: 0x0600087B RID: 2171 RVA: 0x00038590 File Offset: 0x00036790
+	// Token: 0x06000886 RID: 2182 RVA: 0x00038950 File Offset: 0x00036B50
 	public void UpdateSheepPlayerIndexes(int shaunPlayerIndex, int timmyPlayerIndex, int shirleyPlayerIndex)
 	{
 		this.sheepPlayerIndex[0] = shaunPlayerIndex;
@@ -92,7 +92,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		this.onScreenTimer = 2f;
 	}
 
-	// Token: 0x0600087C RID: 2172 RVA: 0x000385F4 File Offset: 0x000367F4
+	// Token: 0x06000887 RID: 2183 RVA: 0x000389B4 File Offset: 0x00036BB4
 	private void UpdateSheepDisplay(int sheepIndex, int playerIndex)
 	{
 		Color colourForPlayerIndex = this.GetColourForPlayerIndex(playerIndex);
@@ -113,7 +113,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		image.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600087D RID: 2173 RVA: 0x00007F92 File Offset: 0x00006192
+	// Token: 0x06000888 RID: 2184 RVA: 0x00007FAE File Offset: 0x000061AE
 	private Color GetColourForPlayerIndex(int index)
 	{
 		switch (index)
@@ -129,7 +129,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600087E RID: 2174 RVA: 0x00007FC3 File Offset: 0x000061C3
+	// Token: 0x06000889 RID: 2185 RVA: 0x00007FDF File Offset: 0x000061DF
 	private Sprite GetNumberSpriteForPlayerIndex(int index)
 	{
 		switch (index)
@@ -145,40 +145,40 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400091F RID: 2335
+	// Token: 0x04000929 RID: 2345
 	public Color playerOneColour;
 
-	// Token: 0x04000920 RID: 2336
+	// Token: 0x0400092A RID: 2346
 	public Color playerTwoColour;
 
-	// Token: 0x04000921 RID: 2337
+	// Token: 0x0400092B RID: 2347
 	public Color playerThreeColour;
 
-	// Token: 0x04000922 RID: 2338
+	// Token: 0x0400092C RID: 2348
 	public Color noPlayerColour;
 
-	// Token: 0x04000923 RID: 2339
+	// Token: 0x0400092D RID: 2349
 	public Image[] colouredMarkerImages;
 
-	// Token: 0x04000924 RID: 2340
+	// Token: 0x0400092E RID: 2350
 	public Image[] colouredTabImages;
 
-	// Token: 0x04000925 RID: 2341
+	// Token: 0x0400092F RID: 2351
 	public Image[] numberImages;
 
-	// Token: 0x04000926 RID: 2342
+	// Token: 0x04000930 RID: 2352
 	public Sprite numberOneSprite;
 
-	// Token: 0x04000927 RID: 2343
+	// Token: 0x04000931 RID: 2353
 	public Sprite numberTwoSprite;
 
-	// Token: 0x04000928 RID: 2344
+	// Token: 0x04000932 RID: 2354
 	public Sprite numberThreeSprite;
 
-	// Token: 0x04000929 RID: 2345
+	// Token: 0x04000933 RID: 2355
 	private StorySheepStatusDisplay.DisplayState currentDisplayState;
 
-	// Token: 0x0400092A RID: 2346
+	// Token: 0x04000934 RID: 2356
 	private int[] sheepPlayerIndex = new int[]
 	{
 		0,
@@ -186,40 +186,40 @@ public class StorySheepStatusDisplay : MonoBehaviour
 		-1
 	};
 
-	// Token: 0x0400092B RID: 2347
+	// Token: 0x04000935 RID: 2357
 	private RectTransform rootRectTransform;
 
-	// Token: 0x0400092C RID: 2348
+	// Token: 0x04000936 RID: 2358
 	private TweenBase movementTween;
 
-	// Token: 0x0400092D RID: 2349
+	// Token: 0x04000937 RID: 2359
 	private float onScreenTimer;
 
-	// Token: 0x0400092E RID: 2350
+	// Token: 0x04000938 RID: 2360
 	private const float onScreenDuration = 2f;
 
-	// Token: 0x0400092F RID: 2351
+	// Token: 0x04000939 RID: 2361
 	private const float movementTweenDuration = 0.5f;
 
-	// Token: 0x04000930 RID: 2352
+	// Token: 0x0400093A RID: 2362
 	private const float onScreenPosY = 0f;
 
-	// Token: 0x04000931 RID: 2353
+	// Token: 0x0400093B RID: 2363
 	private const float offScreenPosY = 280f;
 
-	// Token: 0x04000932 RID: 2354
+	// Token: 0x0400093C RID: 2364
 	private int state;
 
-	// Token: 0x02000162 RID: 354
+	// Token: 0x02000163 RID: 355
 	private enum DisplayState
 	{
-		// Token: 0x04000934 RID: 2356
+		// Token: 0x0400093E RID: 2366
 		OnScreen,
-		// Token: 0x04000935 RID: 2357
+		// Token: 0x0400093F RID: 2367
 		AnimatingOut,
-		// Token: 0x04000936 RID: 2358
+		// Token: 0x04000940 RID: 2368
 		OffScreen,
-		// Token: 0x04000937 RID: 2359
+		// Token: 0x04000941 RID: 2369
 		AnimatingIn
 	}
 }
