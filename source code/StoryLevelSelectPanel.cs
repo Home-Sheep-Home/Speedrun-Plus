@@ -2,10 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000E1 RID: 225
+// Token: 0x020000E2 RID: 226
 public class StoryLevelSelectPanel : MonoBehaviour
 {
-	// Token: 0x060005C9 RID: 1481 RVA: 0x0002A810 File Offset: 0x00028A10
+	// Token: 0x060005D6 RID: 1494 RVA: 0x0002AB7C File Offset: 0x00028D7C
 	public void SetupPanel(string id, Sprite thumbnailSprite)
 	{
 		this.levelId = id;
@@ -68,7 +68,7 @@ public class StoryLevelSelectPanel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005CA RID: 1482 RVA: 0x0000620C File Offset: 0x0000440C
+	// Token: 0x060005D7 RID: 1495 RVA: 0x0000625F File Offset: 0x0000445F
 	public void SetLocked(bool locked)
 	{
 		this.levelLockedRoot.gameObject.SetActive(locked);
@@ -76,13 +76,13 @@ public class StoryLevelSelectPanel : MonoBehaviour
 		this.isLocked = locked;
 	}
 
-	// Token: 0x060005CB RID: 1483 RVA: 0x0000623A File Offset: 0x0000443A
+	// Token: 0x060005D8 RID: 1496 RVA: 0x0000628D File Offset: 0x0000448D
 	public bool IsLocked()
 	{
 		return this.isLocked;
 	}
 
-	// Token: 0x060005CC RID: 1484 RVA: 0x0002AA10 File Offset: 0x00028C10
+	// Token: 0x060005D9 RID: 1497 RVA: 0x0002AD7C File Offset: 0x00028F7C
 	public void SetStarCount(int count)
 	{
 		for (int i = 0; i < this.starImages.Length; i++)
@@ -94,7 +94,7 @@ public class StoryLevelSelectPanel : MonoBehaviour
 		this.starOutline.gameObject.SetActive(count > 3 && this.starImages[0].gameObject.activeSelf);
 	}
 
-	// Token: 0x060005CD RID: 1485 RVA: 0x0002AA80 File Offset: 0x00028C80
+	// Token: 0x060005DA RID: 1498 RVA: 0x0002ADEC File Offset: 0x00028FEC
 	public void SetupCollectables(int totalCount, int cupcakesFound, int socksFound, int bonusesFound)
 	{
 		for (int i = 0; i < this.collectableImages.Length; i++)
@@ -124,7 +124,7 @@ public class StoryLevelSelectPanel : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005CE RID: 1486
+	// Token: 0x060005DB RID: 1499 RVA: 0x0002AE78 File Offset: 0x00029078
 	public void SetBestTimeText(float bestTime)
 	{
 		TimeSpan timeSpan = TimeSpan.FromSeconds((double)bestTime);
@@ -136,75 +136,75 @@ public class StoryLevelSelectPanel : MonoBehaviour
 		this.bestTimeText.text = text;
 	}
 
-	// Token: 0x060005CF RID: 1487 RVA: 0x00006242 File Offset: 0x00004442
+	// Token: 0x060005DC RID: 1500 RVA: 0x00006295 File Offset: 0x00004495
 	public string GetLevelId()
 	{
 		return this.levelId;
 	}
 
-	// Token: 0x040005DB RID: 1499
+	// Token: 0x040005E7 RID: 1511
 	public Text levelTitleText;
 
-	// Token: 0x040005DC RID: 1500
+	// Token: 0x040005E8 RID: 1512
 	public Image panelTopImage;
 
-	// Token: 0x040005DD RID: 1501
+	// Token: 0x040005E9 RID: 1513
 	public Image panelBottomImage;
 
-	// Token: 0x040005DE RID: 1502
+	// Token: 0x040005EA RID: 1514
 	public Color panelLevelCompletedColour;
 
-	// Token: 0x040005DF RID: 1503
+	// Token: 0x040005EB RID: 1515
 	public Color panelLevelUnlockedColour;
 
-	// Token: 0x040005E0 RID: 1504
+	// Token: 0x040005EC RID: 1516
 	public Image previewImage;
 
-	// Token: 0x040005E1 RID: 1505
+	// Token: 0x040005ED RID: 1517
 	public Image[] starImages;
 
-	// Token: 0x040005E2 RID: 1506
+	// Token: 0x040005EE RID: 1518
 	public Image starOutline;
 
-	// Token: 0x040005E3 RID: 1507
+	// Token: 0x040005EF RID: 1519
 	public Sprite starOffSprite;
 
-	// Token: 0x040005E4 RID: 1508
+	// Token: 0x040005F0 RID: 1520
 	public Sprite starOnSprite;
 
-	// Token: 0x040005E5 RID: 1509
+	// Token: 0x040005F1 RID: 1521
 	public Image[] collectableImages;
 
-	// Token: 0x040005E6 RID: 1510
+	// Token: 0x040005F2 RID: 1522
 	public Sprite collectableUnfoundSprite;
 
-	// Token: 0x040005E7 RID: 1511
+	// Token: 0x040005F3 RID: 1523
 	public Sprite collectableFoundSockSprite;
 
-	// Token: 0x040005E8 RID: 1512
+	// Token: 0x040005F4 RID: 1524
 	public Sprite collectableFoundCupcakeSprite;
 
-	// Token: 0x040005E9 RID: 1513
+	// Token: 0x040005F5 RID: 1525
 	public Sprite collectableFoundJoystickSprite;
 
-	// Token: 0x040005EA RID: 1514
+	// Token: 0x040005F6 RID: 1526
 	public Text bestTimeTitleText;
 
-	// Token: 0x040005EB RID: 1515
+	// Token: 0x040005F7 RID: 1527
 	public Text bestTimeText;
 
-	// Token: 0x040005EC RID: 1516
+	// Token: 0x040005F8 RID: 1528
 	public Transform levelUnlockedRoot;
 
-	// Token: 0x040005ED RID: 1517
+	// Token: 0x040005F9 RID: 1529
 	public Transform levelLockedRoot;
 
-	// Token: 0x040005EE RID: 1518
+	// Token: 0x040005FA RID: 1530
 	public Text lockedLevelTitleText;
 
-	// Token: 0x040005EF RID: 1519
+	// Token: 0x040005FB RID: 1531
 	private bool isLocked;
 
-	// Token: 0x040005F0 RID: 1520
+	// Token: 0x040005FC RID: 1532
 	private string levelId;
 }
